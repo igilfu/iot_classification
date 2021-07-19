@@ -13,9 +13,9 @@ import re, pickle, sys
 # # Read dataset to pandas dataframe
 def run(path):
     url = r'' + path
-    irisdata = pd.read_csv(url, header=None, dtype=np.dtype("Float64"))
-    X = irisdata.drop(0, axis=1)
-    y = irisdata[0]
+    data = pd.read_csv(url, header=None, dtype=np.dtype("Float64"))
+    X = data.drop(0, axis=1)
+    y = data[0]
     normalizer = preprocessing.Normalizer().fit(X)
     X = normalizer.transform(X)
 
